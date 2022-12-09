@@ -62,6 +62,7 @@ with open(pathInput) as f:
 
 
 print(tree.show())
+print(tree.show(data_property='size'))
 
 
 # Full storage
