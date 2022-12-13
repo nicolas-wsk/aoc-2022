@@ -19,47 +19,31 @@ with open(pathInput) as f:
     for line in lines[1:]:
         if line.startswith('$'):
             if line.startswith('$ cd'):
-                # print(path, line)
                 if (line == '$ cd ..\n'):
-                    # print(path)
                     path = path[:path.rfind('/')]
-                    # print(path)
-
                 else:
                     if path == '/':
                         path += line.split(' ')[2].strip()
                     else:
                         path += "/" + line.split(' ')[2].strip()
-                    # print(path)
         else:
             currentDir = path[path.rfind('/') + 1:]
-            # print(currentDir)
-            # print(path)
-
             if line.startswith('dir'):
                 dir = line.split(' ')[1].strip()
-                # print(dir, currentDir)
-                # print(path)
                 if currentDir == '':
                     tree.create_node(dir, '/' + dir, "root", data=Size(0))
                 else:
-                    # print(path + '/' + dir)
                     tree.create_node(
                         dir, path + '/' + dir, parent=path, data=Size(0))
             else:
-                # print(line)
                 size = int(line.split(' ')[0])
                 newPath = path
-                # path = path[:path.rfind('/')]
-                # print(path)
                 while newPath != '':
                     node = tree.get_node('root' if newPath == '/' else newPath)
                     if node is not None:
                         tree.update_node('root' if newPath == '/' else newPath,
                                          data=Size(int(node.data.size) + size))
                     newPath = newPath[:newPath.rfind('/')]
-                    # print(newPath, path)
-
 
 print(tree.show())
 print(tree.show(data_property='size'))

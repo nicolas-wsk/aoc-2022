@@ -7,11 +7,10 @@ with open(path) as f:
     [structure, orders] = "".join(lines).split("\n\n")
     structureLines = structure.split("\n")
     structureLines.reverse()
-    # print(structureLines)
+
     stacks = [[] for _ in range(len(structureLines))]
     for idx, line in enumerate(structureLines[0]):
         if (line.isdigit()):
-            # print(line, idx)
             index = int(line) - 1
             for line in structureLines[1:]:
                 current = line[idx]
@@ -20,18 +19,16 @@ with open(path) as f:
     for order in orders.split("\n"):
         [nbrCrate, fromCrate, toCrate] = [
             int(s) for s in order.split() if s.isdigit()]
-        # print(stacks)
         change = [stacks[fromCrate - 1].pop() for _ in range(nbrCrate)]
         change.reverse()
-        # print(change)
         for i in change:
             stacks[toCrate - 1].append(i)
-        # print(nbrCrate, fromCrate, toCrate)
 
-# print(stacks)
+
 result = []
 for st in stacks:
     result.append(st[-1])
+
 print("".join(result))
 
 

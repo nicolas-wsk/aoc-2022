@@ -22,7 +22,6 @@ with open(path) as f:
             if count == 40:
                 print('\n', end='')
                 count = 0
-            # print(count, Xstart)
             count += 1
         if (count - 1) == Xstart or (count - 1) == Xstart - 1 or (count - 1) == Xstart + 1:
             print('#', end='')
@@ -31,7 +30,6 @@ with open(path) as f:
         if count == 40:
             print('\n', end='')
             count = 0
-        # print(count, Xstart)
 
 
 # print(count)

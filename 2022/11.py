@@ -10,9 +10,7 @@ sum = {0: 0, 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0}
 #  19 * 5 * 11 * 17 * 7 * 13 * 3 * 2 = 9699690
 for _ in range(10000):
     for idx, i in enumerate(monkeys):
-        # print(i)
         for item in i[:]:
-            # print(item)
             itemIdx = monkeys[idx].index(item)
             monkeys[idx].pop(itemIdx)
 

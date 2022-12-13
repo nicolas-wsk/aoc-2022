@@ -17,13 +17,11 @@ with open(path) as f:
     total = []
 
     for idx_v, line in enumerate(lines[1:size-1]):
-        # print(idx, line)
         for idx_h, char in enumerate(line[1: len(line) - 2]):
             isVisible = [0, 0, 0, 0]
 
             for idx in range(0, idx_v + 1):
                 up = arr[idx_v - idx][idx_h + 1]
-                # print(char, up, isVisible
                 isVisible[0] += 1
                 if char <= up:
                     break
@@ -57,7 +55,6 @@ with open(path) as f:
 
             print(char, isVisible)
 
-# print(total)
 print(max(total))
 
 

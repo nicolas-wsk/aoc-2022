@@ -76,12 +76,6 @@ with open(path) as f:
                 if i == 8:
                     visited.append(f"{ tail[i]['x']}-{ tail[i]['y']}")
 
-            # print(head)
-            # print(tail)
-
-        # print(head)
-        # print(tail)
-
 print(head)
 print(tail)
 print(visited)

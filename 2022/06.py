@@ -10,10 +10,7 @@ with open(path) as f:
 
     for idx, char in enumerate(arr):
         if idx > 12:
-            # print(idx, char)
-
             temp = arr[idx - 13:idx]
-            # print(temp, char)
             if char not in temp and pydash.uniq(temp) == temp:
                 print(idx + 1)
                 break
