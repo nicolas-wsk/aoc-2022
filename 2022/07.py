@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from treelib import Node, Tree
+from treelib import Tree
 
 
 pathInput = f'{os.path.dirname(__file__)}/inputs/07.txt'
